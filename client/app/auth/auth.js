@@ -14,6 +14,8 @@ angular.module('shortly.auth', [])
       })
       .catch(function (error) {
         console.error(error);
+        console.log('you aint signed up yet!!!!')
+
       });
   };
 
@@ -28,3 +30,8 @@ angular.module('shortly.auth', [])
       });
   };
 });
+
+
+// they put in username and passsword
+///they hit submit
+//we check localStorage object
