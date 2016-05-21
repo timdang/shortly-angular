@@ -1,6 +1,6 @@
 "use strict";
 
-describe('LinksController', function () {
+describe('LinksController', function() {
   var $scope, $rootScope, createController, Links, $httpBackend;
 
   // using angular mocks, we can inject the injector
@@ -16,7 +16,7 @@ describe('LinksController', function () {
 
     var $controller = $injector.get('$controller');
 
-    createController = function () {
+    createController = function() {
       return $controller('LinksController', {
         $scope: $scope,
         Links: Links
@@ -29,12 +29,12 @@ describe('LinksController', function () {
     expect($scope.data).to.be.an('object');
   });
 
-  it('should have a getLinks method on the $scope', function () {
+  it('should have a getLinks method on the $scope', function() {
     createController();
     expect($scope.getLinks).to.be.a('function');
   });
-  it('should call getLinks() when controller is loaded', function () {
-    var mockLinks = [{},{},{}];
+  it('should call getLinks() when controller is loaded', function() {
+    var mockLinks = [{}, {}, {}];
     $httpBackend.expectGET("/api/links").respond(mockLinks);
     createController();
     $httpBackend.flush();
